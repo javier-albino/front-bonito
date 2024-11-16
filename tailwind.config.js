@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        customDark: '#2f2f2f', // Añade un color personalizado basado en la imagen proporcionada
+      },
+    },
   },
+  darkMode: 'media', // o 'class' si prefieres controlar el modo manualmente
   plugins: [],
 }

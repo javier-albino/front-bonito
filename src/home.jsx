@@ -1,38 +1,37 @@
 // src/Home.jsx
 
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className="bg-blue-50 min-h-screen">
+    <div className="bg-customDark min-h-screen text-gray-100">
       {/* Barra de navegación fija */}
-      <nav className="fixed top-0 left-0 right-0 bg-white shadow-md p-4 z-10">
+      <nav className="fixed top-0 left-0 right-0 bg-gray-900 text-white shadow-md p-4 z-10">
         <div className="container mx-auto flex justify-between items-center">
-          <Link to="/" className="text-xl font-bold text-blue-700">
+          <a href="/" className="text-xl font-bold">
             Mi Aplicación De Cobayas
-          </Link>
+          </a>
           <div className="flex space-x-4">
-            <Link to="/home" className="text-gray-700 hover:text-blue-700">
+            <a href="/home" className="text-gray-300 hover:text-white">
               Inicio
-            </Link>
-            <Link to="/sobre-nosotros" className="text-gray-700 hover:text-blue-700">
+            </a>
+            <a href="/sobre-nosotros" className="text-gray-300 hover:text-white">
               Sobre Nosotros
-            </Link>
-            <Link to="/contacto" className="text-gray-700 hover:text-blue-700">
+            </a>
+            <a href="/contacto" className="text-gray-300 hover:text-white">
               Contacto
-            </Link>
+            </a>
           </div>
         </div>
       </nav>
 
       {/* Contenido del componente Home */}
       <div className="flex items-center justify-center min-h-screen pt-32">
-        <div className="text-center p-8 bg-white rounded shadow-md">
-          <h1 className="text-4xl font-bold text-blue-700">
+        <div className="text-center p-8 bg-gray-800 rounded-lg shadow-md">
+          <h1 className="text-4xl font-bold text-white">
             Bienvenido a la Página de Inicio de Las Cobayas
           </h1>
-          <p className="mt-4 text-lg text-gray-700">
+          <p className="mt-4 text-lg text-gray-300">
             Este es el componente de inicio donde puedes mostrar información importante sobre Cobayas.
           </p>
         </div>

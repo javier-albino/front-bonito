@@ -1,41 +1,50 @@
-// src/Home.jsx
-
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
-  return (
-    <div className="bg-gray-100 dark:bg-customDark min-h-screen text-gray-900 dark:text-gray-100">
-      {/* Barra de navegación fija */}
-      <nav className="fixed top-0 left-0 right-0 bg-white dark:bg-gray-900 text-gray-900 dark:text-white shadow-md p-4 z-10">
-        <div className="container mx-auto flex justify-between items-center">
-          <a href="/" className="text-xl font-bold text-blue-700 dark:text-white">
-            Mi Aplicación De Cobayas
-          </a>
-          <div className="flex space-x-4">
-            <a href="/home" className="text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-white">
-              Inicio
-            </a>
-            <a href="/sobre-nosotros" className="text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-white">
-              Sobre Nosotros
-            </a>
-            <a href="/contacto" className="text-gray-700 dark:text-gray-300 hover:text-blue-700 dark:hover:text-white">
-              Contacto
-            </a>
-          </div>
-        </div>
-      </nav>
+  const navigate = useNavigate();
 
-      {/* Contenido del componente Home */}
-      <div className="flex items-center justify-center min-h-screen pt-32">
-        <div className="text-center p-12 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
-            Bienvenido a la Página de Inicio de Las Cobayas
-          </h1>
-          <p className="mt-4 text-lg text-gray-700 dark:text-gray-300">
-            Este es el componente de inicio donde puedes mostrar información importante sobre Cobayas.
-          </p>
-        </div>
-      </div>
+  useEffect(() => {
+    // Manejar la configuración inicial del tema según el sistema operativo
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mediaQuery.matches) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    // Escuchar los cambios de preferencia del tema
+    const handleThemeChange = (e) => {
+      if (e.matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleThemeChange);
+
+    // Limpiar el event listener cuando el componente se desmonte
+    return () => mediaQuery.removeEventListener("change", handleThemeChange);
+  }, []);
+
+  const handleLogin = () => {
+    navigate("/home"); // Redirige al componente Home después del login
+  };
+
+  return (
+    <div className="flex flex-col items-center min-h-screen bg-[#242424] text-gray-900 dark:text-gray-100">
+ 
+
+     {/* Contenido Principal */}
+      <main className="w-full max-w-4xl min-h-[600px] p-16 mt-8 bg-[#1a1a1a] rounded-xl shadow-none">
+        <h1 className="text-4xl font-bold text-center text-white mb-4">
+          Bienvenido a la Página de Inicio de Las Cobayas
+        </h1>
+        <p className="text-center text-gray-300">
+          Este es el componente de inicio donde puedes mostrar información importante sobre Cobayas.
+        </p>
+      </main>
     </div>
   );
 }

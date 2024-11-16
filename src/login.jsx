@@ -34,11 +34,11 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-customDark text-gray-900 dark:text-gray-100">
-      <div className="w-full max-w-3xl min-h-[700px] p-16 space-y-8 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+      <div className="w-full max-w-4xl min-h-[800px] p-20 space-y-10 bg-white dark:bg-gray-900 rounded-lg shadow-md">
         <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white">
           Iniciar sesión
         </h2>
-        <form className="space-y-6">
+        <form className="space-y-8">
           <div>
             <label
               htmlFor="email"

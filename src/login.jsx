@@ -1,3 +1,5 @@
+// src/login.jsx
+
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,8 +35,8 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-customDark text-gray-900 dark:text-gray-100">
-      <div className="w-full max-w-4xl min-h-[800px] p-20 space-y-10 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+    <div className="flex items-center justify-center w-full min-h-screen bg-white dark:bg-[#242424] text-gray-900 dark:text-gray-100">
+      <div className="w-full max-w-4xl min-h-[800px] p-20 space-y-10 bg-white dark:bg-[#1a1a1a] rounded-lg shadow-md">
         <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white">
           Iniciar sesión
         </h2>

@@ -1,3 +1,4 @@
+// src/home.jsx
 import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,15 +34,13 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen bg-[#242424] text-gray-900 dark:text-gray-100">
- 
-
-     {/* Contenido Principal */}
-      <main className="w-full max-w-4xl min-h-[600px] p-16 mt-8 bg-[#1a1a1a] rounded-xl shadow-none">
-        <h1 className="text-4xl font-bold text-center text-white mb-4">
+    <div className="flex items-center justify-center w-full min-h-screen bg-white dark:bg-[#242424] text-gray-900 dark:text-gray-100">
+      {/* Contenido Principal */}
+      <main className="w-full max-w-4xl min-h-[600px] p-16 mx-4 mt-8 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-md">
+        <h1 className="text-4xl font-bold text-center text-gray-900 dark:text-white mb-4">
           Bienvenido a la Página de Inicio de Las Cobayas
         </h1>
-        <p className="text-center text-gray-300">
+        <p className="text-xl text-center text-gray-600 dark:text-gray-300">
           Este es el componente de inicio donde puedes mostrar información importante sobre Cobayas.
         </p>
       </main>

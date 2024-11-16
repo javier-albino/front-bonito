@@ -1,27 +1,48 @@
-// src/Login.jsx
-
-import React from "react";
+import React, { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function Login() {
   const navigate = useNavigate();
 
+  useEffect(() => {
+    // Manejar la configuración inicial del tema según el sistema operativo
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    if (mediaQuery.matches) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+
+    // Escuchar los cambios de preferencia del tema
+    const handleThemeChange = (e) => {
+      if (e.matches) {
+        document.documentElement.classList.add("dark");
+      } else {
+        document.documentElement.classList.remove("dark");
+      }
+    };
+
+    mediaQuery.addEventListener("change", handleThemeChange);
+
+    // Limpiar el event listener cuando el componente se desmonte
+    return () => mediaQuery.removeEventListener("change", handleThemeChange);
+  }, []);
+
   const handleLogin = () => {
-    // Aquí podrías agregar la lógica para autenticar al usuario
     navigate("/home"); // Redirige al componente Home después del login
   };
 
   return (
-    <div className="flex items-center justify-center h-screen bg-customDark text-gray-100">
-      <div className="w-full max-w-md p-12 space-y-8 bg-gray-800 rounded-xl shadow-2xl">
-        <h2 className="text-3xl font-bold text-center text-white">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-customDark text-gray-900 dark:text-gray-100">
+      <div className="w-full max-w-lg p-8 space-y-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
           Iniciar sesión
         </h2>
-        <form className="space-y-6">
+        <form className="space-y-4">
           <div>
             <label
               htmlFor="email"
-              className="block text-lg font-medium text-gray-200"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Correo electrónico
             </label>
@@ -30,7 +51,7 @@ export default function Login() {
               name="email"
               type="email"
               required
-              className="w-full px-4 py-3 mt-1 border rounded-md shadow-sm border-gray-600 focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-gray-900 text-gray-100"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
               placeholder="ejemplo@correo.com"
             />
           </div>
@@ -38,7 +59,7 @@ export default function Login() {
           <div>
             <label
               htmlFor="password"
-              className="block text-lg font-medium text-gray-200"
+              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
             >
               Contraseña
             </label>
@@ -47,7 +68,7 @@ export default function Login() {
               name="password"
               type="password"
               required
-              className="w-full px-4 py-3 mt-1 border rounded-md shadow-sm border-gray-600 focus:outline-none focus:ring-blue-500 focus:border-blue-500 bg-gray-900 text-gray-100"
+              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
               placeholder="Contraseña"
             />
           </div>
@@ -56,7 +77,7 @@ export default function Login() {
             <button
               type="button"
               onClick={handleLogin}
-              className="w-full px-6 py-3 text-lg font-medium text-white bg-blue-500 border border-transparent rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
+              className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Iniciar sesión
             </button>

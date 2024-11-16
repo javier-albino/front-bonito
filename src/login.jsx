@@ -34,15 +34,15 @@ export default function Login() {
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-gray-100 dark:bg-customDark text-gray-900 dark:text-gray-100">
-      <div className="w-full max-w-lg p-8 space-y-6 bg-white dark:bg-gray-900 rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold text-center text-gray-900 dark:text-white">
+      <div className="w-full max-w-3xl min-h-[700px] p-16 space-y-8 bg-white dark:bg-gray-900 rounded-lg shadow-md">
+        <h2 className="text-4xl font-bold text-center text-gray-900 dark:text-white">
           Iniciar sesión
         </h2>
-        <form className="space-y-4">
+        <form className="space-y-6">
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              className="block text-lg font-medium text-gray-700 dark:text-gray-300"
             >
               Correo electrónico
             </label>
@@ -51,7 +51,7 @@ export default function Login() {
               name="email"
               type="email"
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+              className="w-full px-4 py-3 mt-2 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
               placeholder="ejemplo@correo.com"
             />
           </div>
@@ -59,7 +59,7 @@ export default function Login() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+              className="block text-lg font-medium text-gray-700 dark:text-gray-300"
             >
               Contraseña
             </label>
@@ -68,7 +68,7 @@ export default function Login() {
               name="password"
               type="password"
               required
-              className="w-full px-3 py-2 mt-1 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
+              className="w-full px-4 py-3 mt-2 border rounded-md shadow-sm border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-lg dark:bg-gray-700 dark:border-gray-600 dark:text-gray-100"
               placeholder="Contraseña"
             />
           </div>
@@ -77,7 +77,7 @@ export default function Login() {
             <button
               type="button"
               onClick={handleLogin}
-              className="w-full px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full px-5 py-3 text-lg font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
             >
               Iniciar sesión
             </button>

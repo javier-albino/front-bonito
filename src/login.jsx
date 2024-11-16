@@ -12,8 +12,8 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-customDark text-gray-100">
-      <div className="w-full max-w-sm p-10 space-y-8 bg-gray-800 rounded-lg shadow-lg">
+    <div className="flex items-center justify-center h-screen bg-customDark text-gray-100">
+      <div className="w-full max-w-md p-12 space-y-8 bg-gray-800 rounded-xl shadow-2xl">
         <h2 className="text-3xl font-bold text-center text-white">
           Iniciar sesión
         </h2>
@@ -21,7 +21,7 @@ export default function Login() {
           <div>
             <label
               htmlFor="email"
-              className="block text-sm font-medium text-gray-200"
+              className="block text-lg font-medium text-gray-200"
             >
               Correo electrónico
             </label>
@@ -38,7 +38,7 @@ export default function Login() {
           <div>
             <label
               htmlFor="password"
-              className="block text-sm font-medium text-gray-200"
+              className="block text-lg font-medium text-gray-200"
             >
               Contraseña
             </label>
@@ -56,7 +56,7 @@ export default function Login() {
             <button
               type="button"
               onClick={handleLogin}
-              className="w-full px-4 py-3 text-sm font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
+              className="w-full px-6 py-3 text-lg font-medium text-white bg-blue-500 border border-transparent rounded-lg shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-400"
             >
               Iniciar sesión
             </button>
